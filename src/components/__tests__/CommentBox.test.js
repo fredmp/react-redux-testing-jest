@@ -21,8 +21,12 @@ describe('<CommentBox />', () => {
     expect(component.find('textarea')).toHaveLength(1);
   });
 
-  it('shows a button', () => {
-    expect(component.find('button')).toHaveLength(1);
+  it('shows a button to add a comment', () => {
+    expect(component.contains('Add Comment')).toBeTruthy();
+  });
+
+  it('shows a button to fetch comments', () => {
+    expect(component.contains('Fetch Comments')).toBeTruthy();
   });
 
   describe('text area', () => {
