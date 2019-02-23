@@ -10,3 +10,7 @@ it('renders without crashing', () => {
 
   ReactDOM.unmountComponentAtNode(div);
 });
+
+it('has a CommentBox', () => {});
+
+it('has a CommentList', () => {});
