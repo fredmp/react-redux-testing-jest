@@ -1,10 +1,16 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
+import { connect } from 'react-redux';
+import { addComment } from '../actions';
 
 class CommentBox extends React.Component {
   state = { text: '' };
 
   handleSubmit = e => {
     e.preventDefault();
+    const { text } = this.state;
+    const { addComment: addCommentAction } = this.props;
+    addCommentAction(text);
     this.setState({ text: '' });
   };
 
@@ -22,4 +28,7 @@ class CommentBox extends React.Component {
   }
 }
 
-export default CommentBox;
+export default connect(
+  null,
+  { addComment },
+)(CommentBox);
